@@ -1,19 +1,28 @@
-import { Button } from "@/components/ui/button"
+import DotGrid from "@/components/DotGrid"
+import Overlay from "@/components/Overlay"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
+    <>
+      <div className="fixed inset-0 z-0">
+        <DotGrid
+          dotSize={3}
+          gap={40}
+          baseColor="#2F293A"
+          activeColor="#5227FF"
+          proximity={80}
+          shockRadius={0}
+          shockStrength={0}
+          resistance={750}
+          returnDuration={1.5}
+        />
+      </div>
+      <div className="pointer-events-none fixed inset-0 z-10 p-6">
+        <div className="pointer-events-auto">
+          <Overlay />
         </div>
       </div>
-    </div>
+      <main className="relative z-5 min-h-screen" />
+    </>
   )
 }
