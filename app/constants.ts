@@ -1,1 +1,6 @@
 export const CV_LINK: string = "https://drive.google.com/file/d/1MFapTh-BjFUjbBeoUeqYh_PcC78rL-iX/view?usp=drive_link"
+
+export const texts = [
+  'Fullstack developer.',
+  'Frontend developer.',
+];
