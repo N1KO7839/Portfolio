@@ -3,6 +3,7 @@
 import { useTheme } from "next-themes"
 import DotGrid from "@/components/DotGrid"
 import Overlay from "@/components/Overlay"
+import MainText from "@/components/ui/MainText"
 
 export default function Page() {
   const { theme } = useTheme()
@@ -23,8 +24,9 @@ export default function Page() {
         />
       </div>
       <div className="pointer-events-none fixed inset-0 z-10 p-6">
-        <div className="pointer-events-auto">
+        <div className="pointer-events-auto overflow-y-auto h-full">
           <Overlay />
+          <MainText/>
         </div>
       </div>
       <main className="relative z-5 min-h-screen" />

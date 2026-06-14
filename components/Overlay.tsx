@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import {
   NavigationMenu,
@@ -7,20 +7,20 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "./ui/navigation-menu"
-import DecryptedText from "./DecryptedText"
-import { MorphingText } from "@/components/animate-ui/primitives/texts/morphing"
-import BlurText from "./animate-ui/primitives/texts/blur"
 import Image from "next/image"
-import { LOGOS } from "@/app/constants"
-import LogoLoop from "./LogoLoop"
 import { CV_LINK, TEXTS } from "@/app/constants"
 import { useTheme } from "next-themes"
 
 const Overlay = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
-  const isDark = theme === "dark"
+  useEffect(() => {
+    requestAnimationFrame(() => setMounted(true))
+  }, [])
+
+  const isDark = mounted ? theme === "dark" : true
 
   return (
     <div className="flex flex-col">
@@ -64,28 +64,28 @@ const Overlay = () => {
               <Link
                 href="#experience"
                 onClick={() => setMenuOpen(false)}
-                className={`text-xl font-semibold transition-colors hover:text-violet-500 ${isDark ? "text-white/50" : "text-black/50"}`}
+                className={`text-2xl font-semibold transition-colors hover:text-violet-500 sm:text-xl ${isDark ? "text-white/50" : "text-black/50"}`}
               >
                 EXPERIENCE
               </Link>
               <Link
                 href="#projects"
                 onClick={() => setMenuOpen(false)}
-                className={`text-xl font-semibold transition-colors hover:text-violet-500 ${isDark ? "text-white/50" : "text-black/50"}`}
+                className={`text-2xl font-semibold transition-colors hover:text-violet-500 sm:text-xl ${isDark ? "text-white/50" : "text-black/50"}`}
               >
                 PROJECTS
               </Link>
               <Link
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
-                className={`text-xl font-semibold transition-colors hover:text-violet-500 ${isDark ? "text-white/50" : "text-black/50"}`}
+                className={`text-2xl font-semibold transition-colors hover:text-violet-500 sm:text-xl ${isDark ? "text-white/50" : "text-black/50"}`}
               >
                 CONTACT
               </Link>
               <Link
                 href={CV_LINK}
                 onClick={() => setMenuOpen(false)}
-                className={`flex items-center gap-2 text-xl font-semibold transition-colors hover:text-violet-500 ${isDark ? "text-white/50" : "text-black/50"}`}
+                className={`flex items-center gap-2 text-2xl font-semibold transition-colors hover:text-violet-500 sm:text-xl ${isDark ? "text-white/50" : "text-black/50"}`}
               >
                 <Image
                   className={!isDark ? "invert" : ""}
@@ -96,10 +96,33 @@ const Overlay = () => {
                 />
                 Download CV
               </Link>
+              <button
+                onClick={() => mounted && setTheme(theme === "light" ? "dark" : "light")}
+                className={`mt-4 transition-all duration-200 hover:scale-110 hover:rotate-12`}
+              >
+                <Image
+                  className={!isDark ? "invert" : ""}
+                  width={26}
+                  height={26}
+                  src={theme === "light" ? "/darkTheme.svg" : "/lightTheme.svg"}
+                  alt="Toggle theme"
+                />
+              </button>
+              <div className="flex items-center gap-5 mt-4">
+                <Link target="_blank" href="https://www.linkedin.com/in/nikodem-karla-b9b55a2a8/">
+                  <Image className={!isDark ? "invert" : ""} src="/socials_icons/linkedin.svg" alt="LinkedIn" width={25} height={25} />
+                </Link>
+                <Link target="_blank" href="https://www.instagram.com/niko_karlaa/">
+                  <Image className={!isDark ? "invert" : ""} src="/socials_icons/instagram.svg" alt="Instagram" width={25} height={25} />
+                </Link>
+                <Link target="_blank" href="https://github.com/N1KO7839">
+                  <Image className={!isDark ? "invert" : ""} src="/socials_icons/github.svg" alt="GitHub" width={25} height={25} />
+                </Link>
+              </div>
             </div>
           )}
 
-          <NavigationMenu className="-mx-10 hidden md:block">
+          <NavigationMenu className="absolute p-2 -mx-10 hidden md:block">
             <NavigationMenuList className="flex-col items-center justify-center gap-10">
               <NavigationMenuItem>
                 <NavigationMenuLink
@@ -143,29 +166,8 @@ const Overlay = () => {
             </NavigationMenuList>
           </NavigationMenu>
         </nav>
-        <div className="mt-20 ml-0 flex flex-col gap-6 self-center sm:mt-30 sm:ml-10 sm:min-w-114 md:mt-40 md:ml-20 lg:mt-60 lg:ml-40 lg:max-w-2xl xl:max-w-3xl">
-          <DecryptedText
-            text="NIKODEM KARLA"
-            speed={75}
-            sequential
-            maxIterations={30}
-            className="revealed text-2xl font-medium tracking-widest sm:text-3xl md:text-4xl lg:text-5xl"
-            parentClassName="all-letters"
-            encryptedClassName="encrypted text-2xl font-medium tracking-wider sm:text-3xl md:text-4xl lg:text-5xl"
-            animateOn="view"
-          />
-          <MorphingText
-            className={`text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl ${isDark ? "text-violet-300/95" : "text-violet-600/95"}`}
-            text={TEXTS}
-            loop
-          />
-          <BlurText
-            className={`text-sm sm:text-base md:text-lg lg:text-xl ${isDark ? "text-white/85" : "text-black/85"}`}
-            text="Technical high school student building full-stack applications with Next.js, FastAPI, and PostgreSQL. Always learning and turning ideas into practical projects."
-          />
-        </div>
         <Link
-          className={`hidden items-center justify-center gap-2 pt-10 text-sm font-semibold whitespace-nowrap transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent hover:text-violet-500 focus:bg-transparent focus-visible:ring-0 focus-visible:outline-none data-[active=true]:bg-transparent md:flex md:pt-16 lg:text-base xl:text-lg ${isDark ? "text-white/50" : "text-black/50"}`}
+          className={`absolute right-10 hidden items-center justify-center gap-2 pt-10 text-sm font-semibold whitespace-nowrap transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent hover:text-violet-500 focus:bg-transparent focus-visible:ring-0 focus-visible:outline-none data-[active=true]:bg-transparent md:flex md:pt-16 lg:text-base xl:text-lg ${isDark ? "text-white/50" : "text-black/50"}`}
           href={CV_LINK}
         >
           <Image
@@ -178,25 +180,15 @@ const Overlay = () => {
           Download CV
         </Link>
       </div>
-      <LogoLoop
-        logos={LOGOS}
-        speed={90}
-        hoverSpeed={20}
-        logoHeight={42}
-        width={700}
-        gap={40}
-        fadeOut
-        scaleOnHover
-        className="mx-auto mt-6"
-      />
+
       <div className="flex justify-between px-15">
         <button
-          className="cursor-pointer"
+          className="hidden cursor-pointer md:block"
           onClick={() =>
-            theme == "light" ? setTheme("dark") : setTheme("light")
+            mounted && (theme == "light" ? setTheme("dark") : setTheme("light"))
           }
         >
-          {theme == "light" ? (
+          {!mounted || theme == "light" ? (
             <Image
               className="absolute bottom-15 transition-all duration-200 hover:scale-110 hover:rotate-12"
               width={26}
@@ -216,6 +208,57 @@ const Overlay = () => {
             />
           )}
         </button>
+        <div className="absolute right-20 bottom-15 hidden flex-col items-end gap-5 md:flex">
+          <Link
+            target="_blank"
+            className="group flex items-center"
+            href={"https://www.linkedin.com/in/nikodem-karla-b9b55a2a8/"}
+          >
+            <span className="translate-x-2 font-medium opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:opacity-100">
+              Linkedin
+            </span>
+            <Image
+              className={!isDark ? "invert" : ""}
+              src={"/socials_icons/linkedin.svg"}
+              alt="Linkedin link"
+              width={25}
+              height={25}
+            />
+          </Link>
+          <Link
+            target="_blank"
+            className="group flex items-center"
+            href={"https://www.instagram.com/niko_karlaa/"}
+          >
+            <span className="translate-x-2 font-medium opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:opacity-100">
+              Instagram
+            </span>
+
+            <Image
+              className={!isDark ? "invert" : ""}
+              src={"/socials_icons/instagram.svg"}
+              alt="Instagram link"
+              width={25}
+              height={25}
+            />
+          </Link>
+          <Link
+            target="_blank"
+            className="group flex items-center"
+            href={"https://github.com/N1KO7839"}
+          >
+            <span className="translate-x-2 font-medium opacity-0 transition-all duration-300 group-hover:-translate-x-2 group-hover:opacity-100">
+              GitHub
+            </span>
+            <Image
+              className={!isDark ? "invert" : ""}
+              src={"/socials_icons/github.svg"}
+              alt="Github link"
+              width={25}
+              height={25}
+            />
+          </Link>
+        </div>
       </div>
     </div>
   )
