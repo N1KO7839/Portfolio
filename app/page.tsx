@@ -1,14 +1,19 @@
+"use client"
+
+import { useTheme } from "next-themes"
 import DotGrid from "@/components/DotGrid"
 import Overlay from "@/components/Overlay"
 
 export default function Page() {
+  const { theme } = useTheme()
+
   return (
     <>
       <div className="fixed inset-0 z-0">
         <DotGrid
           dotSize={3}
           gap={40}
-          baseColor="#2F293A"
+          baseColor={theme === "dark" ? "#2F293A" : "#E8E4EC"}
           activeColor="#5227FF"
           proximity={80}
           shockRadius={0}
