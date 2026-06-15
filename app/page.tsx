@@ -1,12 +1,17 @@
 "use client"
 
 import { useTheme } from "next-themes"
-import DotGrid from "@/components/DotGrid"
+import DotGrid from "@/components/ui/DotGrid"
 import Overlay from "@/components/Overlay"
-import MainText from "@/components/ui/MainText"
+import MainText from "@/components/MainText"
+import { useState, useEffect } from "react"
 
 export default function Page() {
   const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => setMounted(true), [])
+  const isDark = mounted ? theme === "dark" : false
 
   return (
     <>
@@ -14,7 +19,7 @@ export default function Page() {
         <DotGrid
           dotSize={3}
           gap={40}
-          baseColor={theme === "dark" ? "#2F293A" : "#E8E4EC"}
+          baseColor={isDark ? "#2F293A" : "#E8E4EC"}
           activeColor="#5227FF"
           proximity={80}
           shockRadius={0}
