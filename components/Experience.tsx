@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react"
 import { Calendar, ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { experiences } from "@/app/constants"
@@ -6,8 +7,22 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function Experience() {
+  const [expanded, setExpanded] = useState<Set<number>>(new Set())
+
+  const toggle = (index: number) => {
+    setExpanded((prev) => {
+      const next = new Set(prev)
+      if (next.has(index)) {
+        next.delete(index)
+      } else {
+        next.add(index)
+      }
+      return next
+    })
+  }
+
   return (
-    <div id="experience" className="mx-auto mt-145 w-xs 2xs:w-2xs xs:w-xs sm:w-lg md:w-full md:max-w-xl md:translate-x-16 md:mt-130 lg:mt-110 lg:max-w-2xl lg:translate-x-0 xl:max-w-3xl px-6 py-12 md:py-20">
+    <div id="experience" className="mx-auto mt-145 w-xs 2xs:w-2xs xs:w-xs sm:w-lg md:w-full md:max-w-xl xl:translate-x-16 md:mt-130 lg:max-w-2xl lg:translate-x-0 lg:mt-110 xl:max-w-4xl px-6 py-12 md:py-20">
       <div className="relative ml-4">
         <div className="absolute inset-y-0 left-0 border-l-2" />
 
@@ -29,7 +44,7 @@ export default function Experience() {
 
               <div className="space-y-3 pt-2 sm:pt-1">
                 <div className="flex items-center gap-2">
-                  <p className="text-base font-medium">{company}</p>
+                  <p className="text-lg font-medium">{company}</p>
                   <Link
                     href={link}
                     target="_blank"
@@ -40,15 +55,18 @@ export default function Experience() {
                   </Link>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium tracking-[-0.01em]">
+                  <h3 className="text-2xl font-medium tracking-[-0.01em]">
                     {title}
                   </h3>
-                  <div className="mt-2 flex items-center gap-2 text-sm">
+                  <div className="mt-2 flex items-center gap-2 text-base">
                     <Calendar className="h-4 w-4" />
                     <span>{period}</span>
                   </div>
                 </div>
-                <p className="text-sm text-pretty text-muted-foreground sm:text-base">
+                <p
+                  onClick={() => toggle(index)}
+                  className={`text-base text-muted-foreground sm:text-lg cursor-pointer ${expanded.has(index) ? "text-pretty" : "line-clamp-2"}`}
+                >
                   {description}
                 </p>
                 <div className="flex flex-wrap gap-2">

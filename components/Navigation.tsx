@@ -1,9 +1,14 @@
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "./ui/navigation-menu"
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "./ui/navigation-menu"
 import Image from "next/image"
 
 const Navigation = () => {
   return (
-    <NavigationMenu className="fixed -mx-10 hidden p-2 md:block">
+    <NavigationMenu className="fixed -mx-10 hidden p-2 xl:block">
       <NavigationMenuList className="flex-col items-center justify-center gap-10">
         <NavigationMenuItem>
           <NavigationMenuLink
@@ -23,7 +28,7 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuLink
             href="#experience"
-            className={`rotate-270 rounded-none text-lg font-semibold text-black/50 transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent hover:text-violet-500 focus:bg-transparent focus-visible:ring-0 focus-visible:outline-none data-[active=true]:bg-transparent dark:text-white/50`}
+            className={`rotate-270 rounded-none text-lg font-semibold text-black/50 transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent hover:text-violet-500 focus:bg-transparent focus-visible:ring-0 focus-visible:outline-none data-[active=true]:bg-transparent dark:text-white/50 dark:hover:text-violet-500`}
           >
             EXPERIENCE
           </NavigationMenuLink>
@@ -31,7 +36,7 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuLink
             href="#projects"
-            className={`mt-15 mb-14 rotate-270 rounded-none text-lg font-semibold text-black/50 transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent hover:text-violet-500 focus:bg-transparent focus-visible:ring-0 focus-visible:outline-none data-[active=true]:bg-transparent dark:text-white/50`}
+            className={`mt-15 mb-14 rotate-270 rounded-none text-lg font-semibold text-black/50 transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent hover:text-violet-500 focus:bg-transparent focus-visible:ring-0 focus-visible:outline-none data-[active=true]:bg-transparent dark:text-white/50 dark:hover:text-violet-500`}
           >
             PROJECTS
           </NavigationMenuLink>
@@ -39,7 +44,7 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuLink
             href="#contact"
-            className={`rotate-270 rounded-none text-lg font-semibold text-black/50 transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent hover:text-violet-500 focus:bg-transparent focus-visible:ring-0 focus-visible:outline-none data-[active=true]:bg-transparent dark:text-white/50`}
+            className={`rotate-270 rounded-none text-lg font-semibold text-black/50 transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent hover:text-violet-500 focus:bg-transparent focus-visible:ring-0 focus-visible:outline-none data-[active=true]:bg-transparent dark:text-white/50 dark:hover:text-violet-500`}
           >
             CONTACT
           </NavigationMenuLink>
