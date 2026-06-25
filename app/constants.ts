@@ -106,7 +106,7 @@ export const experiences = [
     description:
       "Gained hands-on commercial experience at age 16 by contributing to Mentingo, a scalable LMS platform built with a modern JavaScript monorepo architecture. Collaborated with senior developers in a production environment, applying full-stack skills across NestJS, React, and PostgreSQL while learning professional development workflows and agile practices.",
     technologies: [
-      "NestJS 10",
+      "NestJS",
       "Vite",
       "React",
       "Postgres",

@@ -2,6 +2,7 @@ import ThemedDotGrid from "@/components/ThemedDotGrid"
 import Overlay from "@/components/Overlay"
 import MainText from "@/components/MainText"
 import Experience from "@/components/Experience"
+import Contact from "@/components/Contact"
 
 export default function Page() {
   return (
@@ -23,6 +24,7 @@ export default function Page() {
           <Overlay />
           <MainText/>
           <Experience/>
+          <Contact />
         </div>
       </div>
       <main className="relative z-5 min-h-screen" />

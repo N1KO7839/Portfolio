@@ -22,7 +22,7 @@ export default function Experience() {
   }
 
   return (
-    <div id="experience" className="mx-auto mt-145 w-xs 2xs:w-2xs xs:w-xs sm:w-lg md:w-full md:max-w-xl xl:translate-x-16 md:mt-130 lg:max-w-2xl lg:translate-x-0 lg:mt-110 xl:max-w-4xl px-6 py-12 md:py-20">
+    <div id="experience" className="mx-auto mt-145 w-xs 2xs:w-2xs xs:w-xs sm:w-lg md:w-full md:max-w-xl xl:translate-x-16 md:mt-130 lg:max-w-2xl lg:translate-x-0 lg:mt-110 xl:max-w-240 px-6 py-12 md:py-20">
       <div className="relative ml-4">
         <div className="absolute inset-y-0 left-0 border-l-2" />
 
