@@ -3,6 +3,8 @@ import { LogoItem } from "@/components/ui/LogoLoop"
 export const CV_LINK: string =
   "https://drive.google.com/file/d/1MFapTh-BjFUjbBeoUeqYh_PcC78rL-iX/view?usp=drive_link"
 
+export const LOCATION_LINK: string = ""
+
 export const TEXTS = ["Fullstack developer.", "Frontend developer."]
 
 export const LOGOS: LogoItem[] = [
