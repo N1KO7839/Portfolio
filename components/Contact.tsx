@@ -12,26 +12,26 @@ const Contact = () => {
         <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl">
           Hello!
         </h2>
-        <p className="text-justify text-sm leading-relaxed text-white/75 sm:text-base md:text-lg lg:text-xl">
+        <p className="text-justify text-sm leading-relaxed text-black/75 dark:text-white/75 sm:text-base md:text-lg lg:text-xl">
           I&apos;m{" "}
-          <span className="font-semibold text-white">
+          <span className="font-semibold text-black dark:text-white">
             Nikodem Karla, a 17-year-old full-stack developer{" "}
           </span>{" "}
           from
-          <span className="font-semibold text-white"> Bielsko-Biała</span>. I
+          <span className="font-semibold text-black dark:text-white"> Bielsko-Biała</span>. I
           specialize in clean, containerized web applications with a frontend
           focus. While balancing the{" "}
-          <span className="font-semibold text-white">
+          <span className="font-semibold text-black dark:text-white">
             Private IT Technical School
           </span>{" "}
           and auditing CS courses at the{" "}
-          <span className="font-semibold text-white">
+          <span className="font-semibold text-black dark:text-white">
             Higher School of Information Technology and Management
           </span>
           , I&apos;m developing a job board aggregator featuring background
           scraping and custom notifications.
         </p>
-        <p className="mt-4 text-justify text-sm leading-relaxed text-white/75 sm:text-base md:text-lg lg:text-xl">
+        <p className="mt-4 text-justify text-sm leading-relaxed text-black/75 dark:text-white/75 sm:text-base md:text-lg lg:text-xl">
           Beyond coding and beginner CTFs, I lift at the gym, explore
           geopolitics, and serve as vice-chairman in the Youth City Council.
         </p>

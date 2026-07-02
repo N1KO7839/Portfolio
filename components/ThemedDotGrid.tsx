@@ -12,8 +12,8 @@ export default function ThemedDotGrid(props: DotGridProps) {
   const baseColor = mounted
     ? theme === "dark"
       ? "#2F293A"
-      : "#E8E4EC"
-    : "#E8E4EC"
+      : "#C8C2CF"
+    : "#C8C2CF"
 
   return <DotGrid {...props} baseColor={baseColor} />
 }

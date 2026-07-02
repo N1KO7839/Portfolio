@@ -50,6 +50,7 @@ const Overlay = () => {
               />
               <Link
                 href="#experience"
+                
                 onClick={() => setMenuOpen(false)}
                 className={`text-2xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-xl dark:text-white/50`}
               >
