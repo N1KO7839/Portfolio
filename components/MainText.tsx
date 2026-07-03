@@ -6,7 +6,7 @@ import LogoLoop from "./ui/LogoLoop"
 
 const MainText = () => {
   return (
-    <div       className="mx-auto mt-20 flex w-xs flex-col gap-6 text-center 2xs:w-2xs xs:w-xs sm:mt-30 sm:w-lg sm:text-start md:mt-40 md:w-full md:max-w-2xl lg:mt-60 lg:max-w-3xl xl:max-w-[1120px]">
+    <div className="mx-auto mt-20 flex w-xs flex-col gap-6 text-center 2xs:w-2xs xs:w-xs sm:mt-30 sm:w-lg sm:text-start md:mt-40 md:w-full md:max-w-2xl lg:mt-60 lg:max-w-3xl xl:max-w-216">
       <DecryptedText
         text="NIKODEM KARLA"
         speed={75}
@@ -26,7 +26,7 @@ const MainText = () => {
         className={`text-base text-black/85 sm:text-lg md:text-xl lg:text-2xl dark:text-white/85`}
         text="Technical high school student building full-stack applications with Next.js, FastAPI, and PostgreSQL. Always learning and turning ideas into practical projects."
       />
-      <div className="mx-auto mt-6 w-full max-w-full sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
+      <div className="mx-auto mt-6 w-full max-w-full sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-4xl">
         <LogoLoop
           logos={LOGOS}
           speed={90}

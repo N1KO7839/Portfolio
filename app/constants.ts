@@ -56,7 +56,7 @@ export const LOGOS: LogoItem[] = [
   },
 ]
 
-export const experiences = [
+export const EXPERIENCES = [
   {
     title: "High School Intern",
     company: "M87 Technologies",
@@ -130,3 +130,74 @@ export const experiences = [
     link: "https://ptibb.edu.pl/index.php/news/",
   },
 ]
+
+export const PROJECTS = [
+  {
+    index: 1,
+    logo: "/project_logos/Jobfi_logo.png",
+    title: "Jobfi",
+    description:
+      "Jobfi automatically scrapes top Polish job boards to match relevant listings with your exact preferences and deliver personalized email alerts.",
+    techstack: [
+      "Typescript",
+      "Nextjs",
+      "Tailwind",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+    ],
+    link: "https://github.com/N1KO7839/Jobfi",
+    created: true,
+    imageClassName: "dark:brightness-0 dark:invert h-12",
+  },
+  {
+    index: 2,
+    logo: "/project_logos/Menting.png",
+    title: "Mentingo",
+    description:
+      "Mentingo is a fully customizable white-label enterprise LMS that directly converts corporate knowledge into interactive courses and trains employees via immersive AI simulations.",
+    techstack: [
+      "Typescript",
+      "React",
+      "Tailwind",
+      "NestJS",
+      "PostgreSQL",
+      "Docker",
+    ],
+    link: "https://github.com/Selleo/mentingo",
+    created: false,
+    imageClassName: "h-8 dark:brightness-0 dark:invert",
+  },
+  {
+    index: 3,
+    logo: "/project_logos/HireAI_logo.png",
+    title: "HireAI",
+    description:
+      "HireAI is an interactive AI web app that thoroughly prepares you for job interviews by automatically generating highly relevant questions and providing actionable hints.",
+    techstack: ["Typescript", "React", "Tailwind", "Nodejs", "Express"],
+    link: "https://github.com/N1KO7839/HireAI",
+    created: true,
+    imageClassName: "h-13",
+  },
+]
+
+export const TECH_COLORS: Record<string, string> = {
+  TypeScript: "#3178C6",
+  Nextjs: "#A1A1AA",
+  React: "#61DAFB",
+  JavaScript: "#F7DF1E",
+  Python: "#3776AB",
+  FastAPI: "#009688",
+  PostgreSQL: "#336791",
+  Tailwind: "#38B2AC",
+  NestJS: "#E0234E",
+  Postgres: "#336791",
+  Docker: "#2496ED",
+  Nodejs: "#83CD29",
+  Express: "#000000",
+}
+
+export const getTechColor = (tech: string): string => {
+  return TECH_COLORS[tech] ?? "#9CA3AF"
+}

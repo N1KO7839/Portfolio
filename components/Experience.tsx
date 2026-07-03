@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { Calendar, ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import { experiences } from "@/app/constants"
+import { EXPERIENCES } from "@/app/constants"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -22,11 +22,11 @@ export default function Experience() {
   }
 
   return (
-    <div id="experience" className="mx-auto mt-145 w-xs 2xs:w-2xs xs:w-xs sm:w-lg md:w-full md:max-w-2xl xl:translate-x-16 md:mt-130 lg:max-w-3xl lg:translate-x-0 lg:mt-110 xl:max-w-280 px-6 py-12 md:py-20">
+    <div id="experience" className="mx-auto mt-145 w-xs 2xs:w-2xs xs:w-xs sm:w-lg md:w-full md:max-w-2xl xl:translate-x-16 md:mt-130 lg:max-w-3xl lg:translate-x-0 lg:mt-110 xl:max-w-260 px-6 py-12 md:py-20">
       <div className="relative ml-4">
         <div className="absolute inset-y-0 left-0 border-l-2" />
 
-        {experiences.map(
+        {EXPERIENCES.map(
           (
             { company, description, period, technologies, title, icon, link },
             index
