@@ -116,13 +116,6 @@ export default function DecryptedText({
     []
   )
 
-  const encryptInstantly = useCallback(() => {
-    const emptySet = new Set<number>()
-    setRevealedIndices(emptySet)
-    setDisplayText(shuffleText(text, emptySet))
-    setIsDecrypted(false)
-  }, [text, shuffleText])
-
   const triggerDecrypt = useCallback(() => {
     if (sequential) {
       orderRef.current = computeOrder(text.length)
@@ -356,15 +349,21 @@ export default function DecryptedText({
   }, [animateOn, triggerDecrypt, isAnimating, isDecrypted, text])
 
   useEffect(() => {
-    if (animateOn === "click") {
-      encryptInstantly()
-    } else {
-      setDisplayText(text)
-      setIsDecrypted(true)
-    }
-    setRevealedIndices(new Set())
-    setDirection("forward")
-  }, [animateOn, text, encryptInstantly])
+    const id = setTimeout(() => {
+      if (animateOn === "click") {
+        const emptySet = new Set<number>()
+        setRevealedIndices(emptySet)
+        setDisplayText(shuffleText(text, emptySet))
+        setIsDecrypted(false)
+      } else {
+        setDisplayText(text)
+        setIsDecrypted(true)
+      }
+      setRevealedIndices(new Set())
+      setDirection("forward")
+    }, 0)
+    return () => clearTimeout(id)
+  }, [animateOn, text, shuffleText])
 
   const animateProps =
     animateOn === "hover" || animateOn === "inViewHover"

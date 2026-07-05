@@ -33,7 +33,10 @@ const Project = ({
       <div className="flex min-w-0 flex-1 flex-col gap-4 sm:gap-6">
         <div className="flex items-center gap-3">
           <h3 className="text-xl font-semibold text-violet-600/95 sm:text-2xl dark:text-violet-300/95">
-            <span className="font-mono text-violet-400/60 dark:text-violet-500/60">//</span> {String(index).padStart(2, "0")}
+            <span className="font-mono text-violet-400/60 dark:text-violet-500/60">
+              //
+            </span>{" "}
+            {String(index).padStart(2, "0")}
           </h3>
           {!created && (
             <span className="mt-1 rounded-full bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-600/80 ring-1 ring-violet-500/20 dark:text-violet-300/80 dark:ring-violet-400/20">
@@ -60,7 +63,9 @@ const Project = ({
             encryptedClassName="text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl"
           />
         </div>
-        <p className="text-base leading-6 sm:text-lg sm:leading-7 md:text-xl md:leading-8">{description}</p>
+        <p className="text-base leading-6 sm:text-lg sm:leading-7 md:text-xl md:leading-8">
+          {description}
+        </p>
         <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {tech_stack.map((tech, index) => (
             <span

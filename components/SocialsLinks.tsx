@@ -1,11 +1,14 @@
 import IconLink from "./ui/icon-link"
 
 interface SocialsLinksProps {
-    containerClassName: string
-    linkClassName?: string
+  containerClassName: string
+  linkClassName?: string
 }
 
-const SocialsLinks = ({containerClassName, linkClassName}: SocialsLinksProps) => {
+const SocialsLinks = ({
+  containerClassName,
+  linkClassName,
+}: SocialsLinksProps) => {
   return (
     <div className={containerClassName}>
       <IconLink

@@ -22,7 +22,10 @@ export default function Experience() {
   }
 
   return (
-    <div id="experience" className="mx-auto mt-40 w-xs 2xs:w-2xs xs:w-xs sm:mt-60 sm:w-lg md:w-full md:max-w-2xl md:mt-100 lg:max-w-3xl lg:mt-80 xl:max-w-260 xl:translate-x-16 px-6 py-10 sm:py-12 md:py-20">
+    <div
+      id="experience"
+      className="mx-auto mt-40 w-xs px-6 py-10 2xs:w-2xs xs:w-xs sm:mt-60 sm:w-lg sm:py-12 md:mt-100 md:w-full md:max-w-2xl md:py-20 lg:mt-80 lg:max-w-3xl xl:max-w-260 xl:translate-x-16"
+    >
       <div className="relative ml-4">
         <div className="absolute inset-y-0 left-0 border-l-2" />
 
@@ -38,7 +41,7 @@ export default function Experience() {
                   width={20}
                   height={20}
                   alt="Experience icon"
-                  className="dark:invert sm:h-6 sm:w-6"
+                  className="sm:h-6 sm:w-6 dark:invert"
                 />
               </div>
 
@@ -49,7 +52,7 @@ export default function Experience() {
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-muted-foreground transition-colors hover:text-foreground"
                   >
                     <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </Link>
@@ -65,7 +68,7 @@ export default function Experience() {
                 </div>
                 <p
                   onClick={() => toggle(index)}
-                  className={`text-sm text-muted-foreground sm:text-base md:text-lg cursor-pointer ${expanded.has(index) ? "text-pretty" : "line-clamp-2"}`}
+                  className={`cursor-pointer text-sm text-muted-foreground sm:text-base md:text-lg ${expanded.has(index) ? "text-pretty" : "line-clamp-2"}`}
                 >
                   {description}
                 </p>

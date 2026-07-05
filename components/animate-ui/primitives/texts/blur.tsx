@@ -40,8 +40,6 @@ const BlurText: React.FC<BlurTextProps> = ({
   className = "",
   animateBy = "words",
   direction = "top",
-  threshold = 0.1,
-  rootMargin = "0px",
   animationFrom,
   animationTo,
   easing = (t: number) => t,
@@ -109,7 +107,10 @@ const BlurText: React.FC<BlurTextProps> = ({
   )
 
   return (
-    <p className={`blur-text ${className} flex flex-wrap justify-center sm:justify-start`} ref={ref}>
+    <p
+      className={`blur-text ${className} flex flex-wrap justify-center sm:justify-start`}
+      ref={ref}
+    >
       {elements.map((segment, index) => {
         const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots)
 

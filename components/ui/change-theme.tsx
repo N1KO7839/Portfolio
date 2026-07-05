@@ -8,7 +8,11 @@ interface changeThemeProps {
   imageClassName: string
 }
 
-const ChangeTheme = ({ mounted, buttonClassName, imageClassName }: changeThemeProps) => {
+const ChangeTheme = ({
+  mounted,
+  buttonClassName,
+  imageClassName,
+}: changeThemeProps) => {
   const { theme, setTheme } = useTheme()
   return (
     <button

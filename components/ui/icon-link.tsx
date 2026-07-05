@@ -10,18 +10,19 @@ interface IconLinkProps {
   classname?: string
 }
 
-const IconLink = ({ text, link, icon, alt, size, classname }: IconLinkProps) => {
-    const iconSize = size ? size : 25
-    const textClassName = classname ? classname : "hidden" 
+const IconLink = ({
+  text,
+  link,
+  icon,
+  alt,
+  size,
+  classname,
+}: IconLinkProps) => {
+  const iconSize = size ? size : 25
+  const textClassName = classname ? classname : "hidden"
   return (
-    <Link
-      target="_blank"
-      className="group flex items-center"
-      href={link}
-    >
-      <span className={textClassName}>
-        {text}
-      </span>
+    <Link target="_blank" className="group flex items-center" href={link}>
+      <span className={textClassName}>{text}</span>
       <Image
         className="invert dark:invert-0"
         src={icon}
