@@ -6,10 +6,10 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="mx-auto mt-145 flex w-xs flex-col items-center gap-8 px-6 py-16 2xs:w-2xs xs:w-xs sm:w-lg sm:px-8 md:mt-130 md:w-full md:max-w-2xl md:flex-row md:items-stretch md:py-20 lg:mt-110 lg:max-w-3xl lg:px-12 xl:max-w-240"
+      className="mx-auto mt-40 flex w-xs flex-col items-center gap-6 px-6 py-12 sm:mt-60 sm:w-lg sm:gap-8 sm:px-8 md:mt-100 md:w-full md:max-w-2xl md:flex-row md:items-stretch md:py-20 lg:mt-60 lg:max-w-3xl lg:px-12 xl:max-w-240"
     >
-      <div className="flex flex-col gap-5 md:order-2">
-        <h2 className="text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl">
+      <div className="flex flex-col gap-4 sm:gap-5 md:order-2">
+        <h2 className="text-2xl font-semibold sm:text-3xl md:text-4xl lg:text-5xl">
           Hello!
         </h2>
         <p className="text-justify text-sm leading-relaxed text-black/75 sm:text-base md:text-lg lg:text-xl dark:text-white/75">
@@ -44,7 +44,7 @@ const Contact = () => {
         </Link>
       </div>
 
-      <div className="relative min-h-87.5 w-full shrink-0 sm:w-3/4 md:order-1 md:min-h-full md:w-56 lg:w-64">
+      <div className="relative h-56 w-full shrink-0 sm:h-64 sm:w-3/4 md:order-1 md:h-auto md:w-56 lg:w-64">
         <Image
           src="/contactPhoto.jpeg"
           fill

@@ -37,12 +37,12 @@ const Overlay = () => {
 
           {menuOpen && (
             <div
-              className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-white/90 xl:hidden dark:bg-black/90`}
+              className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-6 bg-white/90 sm:gap-8 xl:hidden dark:bg-black/90`}
             >
               <Image
                 className="invert dark:invert-0"
-                width={130}
-                height={130}
+                width={100}
+                height={100}
                 src={"/logo.svg"}
                 alt="logo"
                 loading="eager"
@@ -50,21 +50,21 @@ const Overlay = () => {
               <Link
                 href="#experience"
                 onClick={() => setMenuOpen(false)}
-                className={`text-2xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-xl dark:text-white/50`}
+                className={`text-xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-2xl dark:text-white/50`}
               >
                 EXPERIENCE
               </Link>
               <Link
                 href="#projects"
                 onClick={() => setMenuOpen(false)}
-                className={`text-2xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-xl dark:text-white/50`}
+                className={`text-xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-2xl dark:text-white/50`}
               >
                 PROJECTS
               </Link>
               <Link
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
-                className={`text-2xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-xl dark:text-white/50`}
+                className={`text-xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-2xl dark:text-white/50`}
               >
                 CONTACT
               </Link>
@@ -73,14 +73,14 @@ const Overlay = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
-                className={`flex items-center gap-2 text-2xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-xl dark:text-white/50`}
+                className={`flex items-center gap-2 text-xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-2xl dark:text-white/50`}
               >
                 <Image
                   className="invert dark:invert-0"
                   src={"/download.svg"}
                   alt="Download icon"
-                  width={20}
-                  height={20}
+                  width={18}
+                  height={18}
                 />
                 Download CV
               </Link>
@@ -89,14 +89,14 @@ const Overlay = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
-                className={`flex items-center gap-2 text-2xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-xl dark:text-white/50`}
+                className={`flex items-center gap-2 text-xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-2xl dark:text-white/50`}
               >
                 <Image
                   className="invert dark:invert-0"
                   src={"/localization.svg"}
                   alt="Localization icon"
-                  width={20}
-                  height={20}
+                  width={18}
+                  height={18}
                 />
                 See my location
               </Link>

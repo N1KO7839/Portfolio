@@ -167,7 +167,7 @@ export const PROJECTS = [
     ],
     link: "https://github.com/Selleo/mentingo",
     created: false,
-    imageClassName: "h-8 dark:brightness-0 dark:invert",
+    imageClassName: "dark:brightness-0 dark:invert w-40",
   },
   {
     index: 3,
@@ -195,7 +195,7 @@ export const TECH_COLORS: Record<string, string> = {
   Postgres: "#336791",
   Docker: "#2496ED",
   Nodejs: "#83CD29",
-  Express: "#000000",
+  Express: "#4E4E4E",
 }
 
 export const getTechColor = (tech: string): string => {

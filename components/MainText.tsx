@@ -6,7 +6,7 @@ import LogoLoop from "./ui/LogoLoop"
 
 const MainText = () => {
   return (
-    <div className="mx-auto mt-20 flex w-xs flex-col gap-6 text-center 2xs:w-2xs xs:w-xs sm:mt-30 sm:w-lg sm:text-start md:mt-40 md:w-full md:max-w-2xl lg:mt-60 lg:max-w-3xl xl:max-w-216">
+    <div className="mx-auto mt-16 flex w-xs flex-col gap-4 text-center sm:gap-6 2xs:w-2xs xs:w-xs sm:mt-24 sm:w-lg sm:text-start md:mt-32 md:w-full md:max-w-2xl lg:mt-48 lg:max-w-3xl xl:max-w-216">
       <DecryptedText
         text="NIKODEM KARLA"
         speed={75}

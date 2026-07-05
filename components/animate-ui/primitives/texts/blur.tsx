@@ -50,24 +50,34 @@ const BlurText: React.FC<BlurTextProps> = ({
 }) => {
   const elements = animateBy === "words" ? text.split(" ") : text.split("")
   const [inView, setInView] = useState(false)
+  const hasAnimated = useRef(false)
   const ref = useRef<HTMLParagraphElement>(null)
 
   useEffect(() => {
-    if (!ref.current) {
-      return
+    const el = ref.current
+    if (!el || hasAnimated.current) return
+
+    const checkInView = () => {
+      const rect = el.getBoundingClientRect()
+      const viewHeight = window.innerHeight
+      if (rect.top < viewHeight && rect.bottom > 0) {
+        setInView(true)
+        hasAnimated.current = true
+      }
     }
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true)
-          observer.unobserve(ref.current as Element)
-        }
-      },
-      { threshold, rootMargin }
-    )
-    observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [threshold, rootMargin])
+
+    checkInView()
+
+    const scrollEl = el.closest(".overflow-y-auto") as HTMLElement | null
+    const target = scrollEl ?? window
+
+    const onScroll = () => {
+      if (!hasAnimated.current) checkInView()
+    }
+
+    target.addEventListener("scroll", onScroll, { passive: true })
+    return () => target.removeEventListener("scroll", onScroll)
+  }, [])
 
   const defaultFrom = useMemo(
     () =>

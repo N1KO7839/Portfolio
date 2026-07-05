@@ -38,7 +38,6 @@ export default function DecryptedText({
   const [displayText, setDisplayText] = useState<string>(text)
   const [isAnimating, setIsAnimating] = useState<boolean>(false)
   const [revealedIndices, setRevealedIndices] = useState<Set<number>>(new Set())
-  const [hasAnimated, setHasAnimated] = useState<boolean>(false)
   const [isDecrypted, setIsDecrypted] = useState<boolean>(animateOn !== "click")
   const [direction, setDirection] = useState<Direction>("forward")
 
@@ -326,31 +325,35 @@ export default function DecryptedText({
   useEffect(() => {
     if (animateOn !== "view" && animateOn !== "inViewHover") return
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          triggerDecrypt()
-          setHasAnimated(true)
-        }
-      })
+    const el = containerRef.current
+    if (!el) return
+
+    const checkInView = () => {
+      const rect = el.getBoundingClientRect()
+      const viewHeight = window.innerHeight
+      return rect.top < viewHeight && rect.bottom > 0
     }
 
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.1,
+    const onScroll = () => {
+      if (checkInView() && !isAnimating && !isDecrypted) {
+        triggerDecrypt()
+      } else if (!checkInView() && isDecrypted && !isAnimating) {
+        clearInterval(intervalRef.current ?? undefined)
+        setIsAnimating(false)
+        setRevealedIndices(new Set())
+        setDisplayText(text)
+        setIsDecrypted(false)
+      }
     }
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions)
-    const currentRef = containerRef.current
-    if (currentRef) {
-      observer.observe(currentRef)
-    }
+    onScroll()
 
-    return () => {
-      if (currentRef) observer.unobserve(currentRef)
-    }
-  }, [animateOn, hasAnimated, triggerDecrypt])
+    const scrollEl = el.closest(".overflow-y-auto") as HTMLElement | null
+    const target = scrollEl ?? window
+
+    target.addEventListener("scroll", onScroll, { passive: true })
+    return () => target.removeEventListener("scroll", onScroll)
+  }, [animateOn, triggerDecrypt, isAnimating, isDecrypted, text])
 
   useEffect(() => {
     if (animateOn === "click") {

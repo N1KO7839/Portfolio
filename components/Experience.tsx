@@ -22,7 +22,7 @@ export default function Experience() {
   }
 
   return (
-    <div id="experience" className="mx-auto mt-145 w-xs 2xs:w-2xs xs:w-xs sm:w-lg md:w-full md:max-w-2xl xl:translate-x-16 md:mt-130 lg:max-w-3xl lg:translate-x-0 lg:mt-110 xl:max-w-260 px-6 py-12 md:py-20">
+    <div id="experience" className="mx-auto mt-40 w-xs 2xs:w-2xs xs:w-xs sm:mt-60 sm:w-lg md:w-full md:max-w-2xl md:mt-100 lg:max-w-3xl lg:mt-80 xl:max-w-260 xl:translate-x-16 px-6 py-10 sm:py-12 md:py-20">
       <div className="relative ml-4">
         <div className="absolute inset-y-0 left-0 border-l-2" />
 
@@ -32,40 +32,40 @@ export default function Experience() {
             index
           ) => (
             <div className="relative pb-12 pl-10 last:pb-0" key={index}>
-              <div className="absolute left-px flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full bg-accent ring-8 ring-background">
+              <div className="absolute left-px flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full bg-accent ring-6 ring-background sm:h-9 sm:w-9 sm:ring-8">
                 <Image
                   src={icon}
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                   alt="Experience icon"
-                  className="dark:invert"
+                  className="dark:invert sm:h-6 sm:w-6"
                 />
               </div>
 
-              <div className="space-y-3 pt-2 sm:pt-1">
+              <div className="space-y-2 pt-2 sm:space-y-3 sm:pt-1">
                 <div className="flex items-center gap-2">
-                  <p className="text-lg font-medium">{company}</p>
+                  <p className="text-base font-medium sm:text-lg">{company}</p>
                   <Link
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    <ExternalLink className="h-4 w-4" />
+                    <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </Link>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-medium tracking-[-0.01em]">
+                  <h3 className="text-xl font-medium tracking-[-0.01em] sm:text-2xl">
                     {title}
                   </h3>
-                  <div className="mt-2 flex items-center gap-2 text-base">
-                    <Calendar className="h-4 w-4" />
+                  <div className="mt-1.5 flex items-center gap-1.5 text-sm sm:mt-2 sm:gap-2 sm:text-base">
+                    <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     <span>{period}</span>
                   </div>
                 </div>
                 <p
                   onClick={() => toggle(index)}
-                  className={`text-base text-muted-foreground sm:text-lg cursor-pointer ${expanded.has(index) ? "text-pretty" : "line-clamp-2"}`}
+                  className={`text-sm text-muted-foreground sm:text-base md:text-lg cursor-pointer ${expanded.has(index) ? "text-pretty" : "line-clamp-2"}`}
                 >
                   {description}
                 </p>
