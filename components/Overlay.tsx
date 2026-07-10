@@ -48,21 +48,21 @@ const Overlay = () => {
                 loading="eager"
               />
               <Link
-                href="#experience"
+                href="/#experience"
                 onClick={() => setMenuOpen(false)}
                 className={`text-xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-2xl dark:text-white/50`}
               >
                 EXPERIENCE
               </Link>
               <Link
-                href="#projects"
+                href="/#projects"
                 onClick={() => setMenuOpen(false)}
                 className={`text-xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-2xl dark:text-white/50`}
               >
                 PROJECTS
               </Link>
               <Link
-                href="#contact"
+                href="/#contact"
                 onClick={() => setMenuOpen(false)}
                 className={`text-xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-2xl dark:text-white/50`}
               >

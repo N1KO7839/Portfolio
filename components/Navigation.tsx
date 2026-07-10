@@ -27,7 +27,7 @@ const Navigation = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
-            href="#experience"
+            href="/#experience"
             className={`rotate-270 rounded-none text-lg font-semibold text-black/50 transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent hover:text-violet-500 focus:bg-transparent focus-visible:ring-0 focus-visible:outline-none data-[active=true]:bg-transparent dark:text-white/50 dark:hover:text-violet-500`}
           >
             EXPERIENCE
@@ -35,7 +35,7 @@ const Navigation = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
-            href="#projects"
+            href="/#projects"
             className={`mt-15 mb-14 rotate-270 rounded-none text-lg font-semibold text-black/50 transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent hover:text-violet-500 focus:bg-transparent focus-visible:ring-0 focus-visible:outline-none data-[active=true]:bg-transparent dark:text-white/50 dark:hover:text-violet-500`}
           >
             PROJECTS
@@ -43,7 +43,7 @@ const Navigation = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
-            href="#contact"
+            href="/#contact"
             className={`rotate-270 rounded-none text-lg font-semibold text-black/50 transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-transparent hover:text-violet-500 focus:bg-transparent focus-visible:ring-0 focus-visible:outline-none data-[active=true]:bg-transparent dark:text-white/50 dark:hover:text-violet-500`}
           >
             CONTACT

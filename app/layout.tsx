@@ -3,6 +3,7 @@ import { Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "sonner"
 import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
@@ -38,6 +39,23 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
+        <Toaster
+          position="bottom-center"
+          theme="dark"
+          style={
+            {
+              "--normal-bg": "var(--popover)",
+              "--normal-text": "var(--popover-foreground)",
+              "--normal-border": "var(--border)",
+              "--success-bg": "var(--popover)",
+              "--success-text": "#4ade80",
+              "--success-border": "rgba(74, 222, 128, 0.25)",
+              "--error-bg": "var(--popover)",
+              "--error-text": "#f87171",
+              "--error-border": "rgba(248, 113, 113, 0.25)",
+            } as React.CSSProperties
+          }
+        />
       </body>
     </html>
   )

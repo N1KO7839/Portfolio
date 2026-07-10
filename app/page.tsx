@@ -10,7 +10,7 @@ import Footer from "@/components/Footer"
 
 export default function Page() {
   return (
-    <>
+    <section>
       <SmoothScroll />
       <div className="fixed inset-0 z-0">
         <ThemedDotGrid
@@ -34,6 +34,6 @@ export default function Page() {
           <Footer />
         </div>
       </div>
-    </>
+    </section>
   )
 }

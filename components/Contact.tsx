@@ -34,7 +34,7 @@ const Contact = () => {
           , I&apos;m developing a job board aggregator featuring background
           scraping and custom notifications.
         </p>
-        <Link href="/" className="mt-4 w-full">
+        <Link href="/send-email" className="mt-4 w-full">
           <Button
             className="w-full rounded-xl bg-violet-600 text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600"
             size="lg"
