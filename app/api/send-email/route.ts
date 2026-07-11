@@ -5,7 +5,11 @@ import { z } from "zod/v4"
 import { contactEmailTemplate } from "./template"
 import he from "he"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+function getResend() {
+  const key = process.env.RESEND_API_KEY
+  if (!key) throw new Error("Missing RESEND_API_KEY")
+  return new Resend(key)
+}
 const rateLimitStore = new Map<string, { count: number; resetAt: number }>()
 
 const contactSchema = z.object({
@@ -78,7 +82,7 @@ export async function POST(request: Request) {
     message: he.encode(raw.message),
   }
 
-  const { data: emailData, error: sendError } = await resend.emails.send({
+  const { data: emailData, error: sendError } = await getResend().emails.send({
     ...EMAIL_CONFIG,
     replyTo: raw.email,
     subject: `New message from ${raw.name}`,
