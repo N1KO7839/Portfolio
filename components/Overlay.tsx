@@ -69,6 +69,20 @@ const Overlay = () => {
                 CONTACT
               </Link>
               <Link
+                href="tel:+48731075878"
+                onClick={() => setMenuOpen(false)}
+                className={`flex items-center gap-2 text-xl font-semibold text-black/50 transition-colors hover:text-violet-500 sm:text-2xl dark:text-white/50`}
+              >
+                <Image
+                  className="invert dark:invert-0"
+                  src={"/phone.svg"}
+                  alt="Localization icon"
+                  width={18}
+                  height={18}
+                />
+                Call me
+              </Link>
+              <Link
                 href={CV_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -100,11 +114,15 @@ const Overlay = () => {
                 />
                 See my location
               </Link>
-              <ChangeTheme
-                mounted={mounted}
-                buttonClassName="mt-4 transition-all duration-200 hover:scale-110 hover:rotate-12"
-                imageClassName=""
-              />
+              <div className="flex items-center gap-2 text-xl font-semibold text-black/50 sm:text-2xl dark:text-white/50">
+                <ChangeTheme
+                  mounted={mounted}
+                  buttonClassName="transition-all duration-200 hover:scale-110 hover:rotate-12"
+                  imageClassName=""
+                />
+                <h3>Change theme</h3>
+              </div>
+
               <SocialsLinks containerClassName="mt-4 flex items-center gap-5" />
             </div>
           )}
@@ -141,6 +159,24 @@ const Overlay = () => {
             <Image
               className="invert dark:invert-0"
               src={"/localization.svg"}
+              alt="Location icon"
+              width={25}
+              height={25}
+            />
+          </Link>
+
+          <Link
+            className="group/location flex items-center hover:cursor-pointer"
+            href="tel:+48731075878"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="translate-x-2 text-sm font-medium text-black/50 opacity-0 transition-all duration-300 group-hover/location:-translate-x-2 group-hover/location:opacity-100 lg:text-base xl:text-lg dark:text-white/50">
+              +48 731 075 878
+            </span>
+            <Image
+              className="invert dark:invert-0"
+              src={"/phone.svg"}
               alt="Location icon"
               width={25}
               height={25}
