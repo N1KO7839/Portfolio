@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Nikodem Karla",
   },
   description:
-    "Nikodem Karla is a 17-year-old fullstack developer from Bielsko-Biala, Poland. Building modern web applications with Next.js, React, FastAPI, PostgreSQL, and Docker. 1st place DigiEduHack winner, intern at Selleo & M87 Technologies.",
+    "Nikodem Karla - fullstack and frontend developer from Bielsko-Biala, Poland. I build modern web apps with Next.js, React, TypeScript, FastAPI, PostgreSQL and Docker. 1st place DigiEduHack winner.",
   keywords: [
     "Nikodem Karla",
     "fullstack developer",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Nikodem Karla - Portfolio",
     title: "Nikodem Karla - Fullstack & Frontend Developer",
     description:
-      "17-year-old fullstack developer from Bielsko-Biala, Poland. Building modern web applications with Next.js, React, FastAPI, and PostgreSQL.",
+      "Nikodem Karla - fullstack and frontend developer from Bielsko-Biala, Poland. Building modern web apps with Next.js, React, TypeScript, FastAPI, PostgreSQL and Docker.",
     images: [
       {
         url: "/logo.svg",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nikodem Karla - Fullstack & Frontend Developer",
     description:
-      "17-year-old fullstack developer from Bielsko-Biala, Poland. Building modern web applications with Next.js, React, FastAPI, and PostgreSQL.",
+      "Nikodem Karla - fullstack and frontend developer from Bielsko-Biala, Poland. Building modern web apps with Next.js, React, TypeScript, FastAPI, PostgreSQL and Docker.",
     images: ["/logo.svg"],
   },
   robots: {
