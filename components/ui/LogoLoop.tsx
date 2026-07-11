@@ -1,7 +1,6 @@
 "use client"
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 
-
 export type LogoItem =
   | {
       node: React.ReactNode
@@ -213,7 +212,15 @@ const useAnimationLoop = (
       }
       lastTimestampRef.current = null
     }
-  }, [targetVelocity, seqWidth, seqHeight, isHovered, hoverSpeed, isVertical, trackRef])
+  }, [
+    targetVelocity,
+    seqWidth,
+    seqHeight,
+    isHovered,
+    hoverSpeed,
+    isVertical,
+    trackRef,
+  ])
 }
 
 export const LogoLoop = React.memo<LogoLoopProps>(
@@ -384,7 +391,9 @@ export const LogoLoop = React.memo<LogoLoopProps>(
               scaleOnHover &&
                 "transition-transform duration-300 ease-in-out group-hover/item:scale-120"
             )}
-            aria-hidden={!!(item as NodeLogoItem).href && !(item as NodeLogoItem).ariaLabel}
+            aria-hidden={
+              !!(item as NodeLogoItem).href && !(item as NodeLogoItem).ariaLabel
+            }
           >
             {(item as NodeLogoItem).node}
           </span>
@@ -416,7 +425,11 @@ export const LogoLoop = React.memo<LogoLoopProps>(
           ? ((item as NodeLogoItem).ariaLabel ?? (item as NodeLogoItem).title)
           : ((item as ImageLogoItem).alt ?? (item as ImageLogoItem).title)
 
-        const inner = (isNodeItem ? (item as NodeLogoItem).href : (item as ImageLogoItem).href) ? (
+        const inner = (
+          isNodeItem
+            ? (item as NodeLogoItem).href
+            : (item as ImageLogoItem).href
+        ) ? (
           <a
             className={cx(
               "inline-flex items-center rounded no-underline",
@@ -424,7 +437,11 @@ export const LogoLoop = React.memo<LogoLoopProps>(
               "hover:opacity-80",
               "focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-current"
             )}
-            href={isNodeItem ? (item as NodeLogoItem).href : (item as ImageLogoItem).href}
+            href={
+              isNodeItem
+                ? (item as NodeLogoItem).href
+                : (item as ImageLogoItem).href
+            }
             aria-label={itemAriaLabel || "logo link"}
             target="_blank"
             rel="noreferrer noopener"
@@ -439,9 +456,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
           <li
             className={cx(
               "flex-none text-(length:--logoloop-logoHeight) leading-none",
-              isVertical
-                ? "mb-(--logoloop-gap)"
-                : "mr-(--logoloop-gap)",
+              isVertical ? "mb-(--logoloop-gap)" : "mr-(--logoloop-gap)",
               scaleOnHover && "group/item overflow-visible"
             )}
             key={key}

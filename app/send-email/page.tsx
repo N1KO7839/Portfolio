@@ -11,6 +11,7 @@ const Page = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+  const [website, setWebsite] = useState("")
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -21,7 +22,7 @@ const Page = () => {
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, website }),
       })
 
       if (!res.ok) {
@@ -33,6 +34,7 @@ const Page = () => {
       setName("")
       setEmail("")
       setMessage("")
+      setWebsite("")
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Something went wrong.")
     } finally {
@@ -80,7 +82,7 @@ const Page = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name"
-                className="rounded-xl border border-black/10 bg-transparent px-4 py-3 text-sm transition-colors outline-none placeholder:text-black/30 focus:border-violet-500 sm:text-base dark:border-white/10 dark:placeholder:text-white/30 dark:focus:border-violet-400"
+                className="rounded-xl border border-black/10 bg-transparent px-4 py-3 text-sm backdrop-blur-xs transition-colors outline-none placeholder:text-black/30 focus:border-violet-500 sm:text-base dark:border-white/10 dark:placeholder:text-white/30 dark:focus:border-violet-400"
               />
             </div>
 
@@ -98,7 +100,7 @@ const Page = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="rounded-xl border border-black/10 bg-transparent px-4 py-3 text-sm transition-colors outline-none placeholder:text-black/30 focus:border-violet-500 sm:text-base dark:border-white/10 dark:placeholder:text-white/30 dark:focus:border-violet-400"
+                className="rounded-xl border border-black/10 bg-transparent px-4 py-3 text-sm backdrop-blur-xs transition-colors outline-none placeholder:text-black/30 focus:border-violet-500 sm:text-base dark:border-white/10 dark:placeholder:text-white/30 dark:focus:border-violet-400"
               />
             </div>
 
@@ -116,7 +118,24 @@ const Page = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Your message..."
-                className="resize-none rounded-xl border border-black/10 bg-transparent px-4 py-3 text-sm transition-colors outline-none placeholder:text-black/30 focus:border-violet-500 sm:text-base dark:border-white/10 dark:placeholder:text-white/30 dark:focus:border-violet-400"
+                className="resize-none rounded-xl border border-black/10 bg-transparent px-4 py-3 text-sm backdrop-blur-xs transition-colors outline-none placeholder:text-black/30 focus:border-violet-500 sm:text-base dark:border-white/10 dark:placeholder:text-white/30 dark:focus:border-violet-400"
+              />
+            </div>
+
+            <div
+              aria-hidden="true"
+              style={{ position: "absolute", left: "-9999px" }}
+              tabIndex={-1}
+            >
+              <label htmlFor="website">Leave this empty</label>
+              <input
+                id="website"
+                name="website"
+                type="text"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
               />
             </div>
 

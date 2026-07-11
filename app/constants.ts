@@ -153,7 +153,7 @@ export const PROJECTS = [
   },
   {
     index: 2,
-    logo: "/project_logos/Menting.png",
+    logo: "/project_logos/Mentingo.png",
     title: "Mentingo",
     description:
       "Mentingo is a fully customizable white-label enterprise LMS that directly converts corporate knowledge into interactive courses and trains employees via immersive AI simulations.",
@@ -201,3 +201,10 @@ export const TECH_COLORS: Record<string, string> = {
 export const getTechColor = (tech: string): string => {
   return TECH_COLORS[tech] ?? "#9CA3AF"
 }
+
+export const EMAIL_CONFIG = {
+  from: "Portfolio <noreply@nkarla.dev>",
+  to: "nikodemkarla@gmail.com",
+}
+
+export const RATE_LIMIT = { max: 3, windowMs: 3_600_000 }
