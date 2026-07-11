@@ -94,7 +94,7 @@ const Project = ({
         <Image
           className="ml-10 h-auto w-full rounded-xl object-cover"
           src={`/project_showcases/${title}_showcase.png`}
-          alt="Project showcase"
+          alt={`${title} project showcase - Nikodem Karla`}
           width={480}
           height={400}
         />

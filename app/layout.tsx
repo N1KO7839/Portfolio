@@ -6,11 +6,85 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "sonner"
 import { cn } from "@/lib/utils"
 
+const SITE_URL = "https://nkarla.dev"
+
 export const metadata: Metadata = {
-  title: "Nikodem Karla - Portfolio",
-  description: "Fullstack developer portfolio",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Nikodem Karla - Fullstack & Frontend Developer | Portfolio",
+    template: "%s | Nikodem Karla",
+  },
+  description:
+    "Nikodem Karla is a 17-year-old fullstack developer from Bielsko-Biala, Poland. Building modern web applications with Next.js, React, FastAPI, PostgreSQL, and Docker. 1st place DigiEduHack winner, intern at Selleo & M87 Technologies.",
+  keywords: [
+    "Nikodem Karla",
+    "fullstack developer",
+    "frontend developer",
+    "portfolio",
+    "Next.js developer",
+    "React developer",
+    "FastAPI",
+    "PostgreSQL",
+    "web developer Poland",
+    "Bielsko-Biala developer",
+    "DigiEduHack winner",
+    "young developer",
+    "TypeScript",
+    "Docker",
+    "Python developer",
+  ],
+  authors: [{ name: "Nikodem Karla" }],
+  creator: "Nikodem Karla",
+  publisher: "Nikodem Karla",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: "Nikodem Karla - Portfolio",
+    title: "Nikodem Karla - Fullstack & Frontend Developer",
+    description:
+      "17-year-old fullstack developer from Bielsko-Biala, Poland. Building modern web applications with Next.js, React, FastAPI, and PostgreSQL.",
+    images: [
+      {
+        url: "/logo.svg",
+        width: 512,
+        height: 512,
+        alt: "Nikodem Karla - Fullstack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nikodem Karla - Fullstack & Frontend Developer",
+    description:
+      "17-year-old fullstack developer from Bielsko-Biala, Poland. Building modern web applications with Next.js, React, FastAPI, and PostgreSQL.",
+    images: ["/logo.svg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
   icons: {
     icon: "/logo.svg",
+    apple: "/logo.svg",
+  },
+  other: {
+    "theme-color": "#7c3aed",
   },
 }
 

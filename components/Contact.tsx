@@ -49,7 +49,7 @@ const Contact = () => {
           src="/contactPhoto.jpeg"
           fill
           sizes="(max-width: 768px) 100vw, 256px"
-          alt="Image showing myself"
+          alt="Nikodem Karla - fullstack developer from Bielsko-Biala"
           className="rounded-lg object-cover"
         />
       </div>

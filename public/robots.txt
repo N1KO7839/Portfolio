@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nkarla.dev/sitemap.xml
