@@ -99,7 +99,7 @@ const Overlay = () => {
                 Download CV
               </Link>
               <Link
-                href={CV_LINK}
+                href="https://www.google.com/maps/place/Bielsko-Bia%C5%82a"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
